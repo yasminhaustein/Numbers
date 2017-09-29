@@ -1,3 +1,29 @@
 body {
     background-color: greenyellow;
 }
+
+.centered {
+    display: block;
+    text-align: center;
+    line-height: normal;
+}
+
+.placeholder {
+    visibility: hidden;
+
+}
+input {
+    height: 30px;
+    margin: 5px;
+    font-size: 15px;
+    border: 1px black solid;
+    color: #FFFFFF;
+}
+input[type=button] {
+    width:30px;
+    background: #1e4f21;
+
+}
+input[type=submit] {
+    background: #4f1008;
+}
