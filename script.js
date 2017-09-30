@@ -11,7 +11,7 @@ var div = document.getElementById("number");
 function start() {
     number_of_Digits = 3;
     generateNumber();
-    window.setTimeout(vanishNumber(),10000);
+    window.setTimeout(vanishNumber,10000);
 }
 
 function generateNumber() {
