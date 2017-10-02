@@ -16,7 +16,7 @@ function initiate() {
 function start() {
     document.getElementById("ingame").style.display = "block";
     document.getElementById("settings").style.display = "none";
-    number_of_Digits = 3;
+    number_of_Digits = document.getElementById("number_of_digits").value;
     generateNumber();
 }
 

@@ -27,3 +27,11 @@ input[type=button] {
 input[type=submit] {
     background: #4f1008;
 }
+
+input[type=number] {
+    padding-left: 5px;
+    width: 30px;
+    color: #000;
+    text-align: center;
+}
+
