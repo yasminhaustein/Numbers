@@ -6,29 +6,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="centered" id="number" ></div>
-<div class="centered">
-    <input type="button" value="1" onclick="numberInput(1)"/>
-    <input type="button" value="2" onclick="numberInput(2)"/>
-    <input type="button" value="3" onclick="numberInput(3)"/>
+<div id="settings">
+    <input type="button"/>
 </div>
-<div class="centered">
-    <input type="button" value="4" onclick="numberInput(4)"/>
-    <input type="button" value="5" onclick="numberInput(5)"/>
-    <input type="button" value="6" onclick="numberInput(6)"/>
-</div>
-<div class="centered">
-    <input type="button" value="7" onclick="numberInput(7)"/>
-    <input type="button" value="8" onclick="numberInput(8)"/>
-    <input type="button" value="9" onclick="numberInput(9)"/>
-</div>
-<div class="centered">
-    <input type="button" value="0" class="placeholder" disabled="disabled"/>
-    <input type="button" value="0" onclick="numberInput(0)"/>
-    <input type="button" value="&#x232b;" onclick="eraseNumber()"/>
-</div>
-<div class="centered">
-    <input type="submit" value="Done" onclick="checkNumber()"/>
+<div id="ingame">
+    <div class="centered" id="number"></div>
+    <div id="numberpad">
+        <div class="centered">
+            <input type="button" value="1" onclick="numberInput(1)"/>
+            <input type="button" value="2" onclick="numberInput(2)"/>
+            <input type="button" value="3" onclick="numberInput(3)"/>
+        </div>
+        <div class="centered">
+            <input type="button" value="4" onclick="numberInput(4)"/>
+            <input type="button" value="5" onclick="numberInput(5)"/>
+            <input type="button" value="6" onclick="numberInput(6)"/>
+        </div>
+        <div class="centered">
+            <input type="button" value="7" onclick="numberInput(7)"/>
+            <input type="button" value="8" onclick="numberInput(8)"/>
+            <input type="button" value="9" onclick="numberInput(9)"/>
+        </div>
+        <div class="centered">
+            <input type="button" value="0" class="placeholder" disabled="disabled"/>
+            <input type="button" value="0" onclick="numberInput(0)"/>
+            <input type="button" value="&#x232b;" onclick="eraseNumber()"/>
+        </div>
+        <div class="centered">
+            <input type="submit" value="Done" onclick="checkNumber()"/>
+        </div>
+    </div>
 </div>
 </body>
 <script src="script.js"></script>
