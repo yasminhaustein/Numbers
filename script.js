@@ -1,14 +1,21 @@
 /**
  * Created by yasminhaustein on 29.09.17.
  */
-window.onload = start;
+window.onload = initiate;
 var randomNumber = [];
 var currentInput = [];
 var number_of_Digits;
 var div = document.getElementById("number");
 var numberpad = document.getElementById("numberpad");
 
+function initiate() {
+    document.getElementById("ingame").style.display = "none";
+    document.getElementById("settings").style.display = "block";
+}
+
 function start() {
+    document.getElementById("ingame").style.display = "block";
+    document.getElementById("settings").style.display = "none";
     number_of_Digits = 3;
     generateNumber();
 }
@@ -65,5 +72,7 @@ function stringOf(x) {
 }
 
 function gameOver() {
-    alert("Game Over!");
+    alert("Game Over! The right number was " + stringOf(randomNumber));
+    initiate();
+
 }
