@@ -4,7 +4,8 @@
 window.onload = initiate;
 var randomNumber = [];
 var currentInput = [];
-var number_of_Digits;
+var number_of_digits;
+var speed;
 var div = document.getElementById("number");
 var numberpad = document.getElementById("numberpad");
 
@@ -16,7 +17,8 @@ function initiate() {
 function start() {
     document.getElementById("ingame").style.display = "block";
     document.getElementById("settings").style.display = "none";
-    number_of_Digits = document.getElementById("number_of_digits").value;
+    number_of_digits = document.getElementById("number_of_digits").value;
+    speed = document.getElementById("number_of_seconds").value;
     generateNumber();
 }
 
@@ -25,12 +27,12 @@ function generateNumber() {
     randomNumber = [];
     currentInput = [];
     div = document.getElementById("number");
-    for (var i = 0; i < number_of_Digits; i++) {
+    for (var i = 0; i < number_of_digits; i++) {
         randomNumber.push(Math.floor(Math.random() * 10));
     }
     div.textContent = stringOf(randomNumber);
-    number_of_Digits++;
-    window.setTimeout(vanishNumber, 3000);
+    number_of_digits++;
+    window.setTimeout(vanishNumber, (1000 * (10 - speed)));
 }
 
 function vanishNumber() {
