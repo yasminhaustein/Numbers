@@ -6,19 +6,28 @@ var randomNumber = [];
 var currentInput = [];
 var number_of_digits;
 var speed;
+var score = 0;
+var firstgame = true;
+
+
 var div = document.getElementById("number");
 var numberpad = document.getElementById("numberpad");
 
 function initiate() {
+    if(!firstgame) {
+        document.getElementById("score").textContent = score;
+    }
     document.getElementById("ingame").style.display = "none";
     document.getElementById("settings").style.display = "block";
+    score = 0;
 }
 
 function start() {
+    firstgame = false;
     document.getElementById("ingame").style.display = "block";
     document.getElementById("settings").style.display = "none";
     number_of_digits = document.getElementById("number_of_digits").value;
-    speed = document.getElementById("number_of_seconds").value;
+    speed = 10 - document.getElementById("number_of_seconds").value;
     generateNumber();
 }
 
@@ -31,8 +40,7 @@ function generateNumber() {
         randomNumber.push(Math.floor(Math.random() * 10));
     }
     div.textContent = stringOf(randomNumber);
-    number_of_digits++;
-    window.setTimeout(vanishNumber, (1000 * (10 - speed)));
+    window.setTimeout(vanishNumber, (1000 * speed));
 }
 
 function vanishNumber() {
@@ -52,14 +60,18 @@ function eraseNumber() {
 }
 
 function checkNumber() {
-    var check;
+    var error;
     if (randomNumber.length == currentInput.length) {
         for (var i = 0; i < randomNumber.length; i++) {
             if (randomNumber[i] != currentInput[i]) {
-                check = true;
+                error = true;
             }
         }
-        if (!check) generateNumber();
+        if (!error) {
+            score = score + (number_of_digits * speed * 1000)
+            number_of_digits++;
+            generateNumber();
+        }
         else gameOver();
     }
     else gameOver();
